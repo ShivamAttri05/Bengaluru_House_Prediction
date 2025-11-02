@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter House Features</h2>
+        <form action="/predict" method="post">
+            <label>Size (in BHK):</label><br>
+            <input type="number" name="size" step="1" min="1" required><br><br>
+            
+            <label>Total Square Feet:</label><br>
+            <input type="number" name="total_sqft" step="any" min="100" required><br><br>
+
+            <label>Bathrooms:</label><br>
+            <input type="number" name="bath" step="any" min="1" required><br><br>
+
+            <label>Balcony Count:</label><br>
+            <input type="number" name="balcony" step="1" min="0" max="3" required><br><br>
+
+            <label>Area Type:</label><br>
+            <select name="area_type" required>
+                <option value="Built_up_Area">Built-up Area</option>
+                <option value="Carpet_Area">Carpet Area</option>
+                <option value="Plot_Area">Plot Area</option>
+                <option value="Super_built_up_Area">Super Built-up Area</option>
+            </select><br><br>
+
+            <input type="submit" value="Predict Price">
+        </form>
+
+        {% if prediction is not none %}
+            <h3>Predicted Price: {{ prediction }} Lakhs</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
