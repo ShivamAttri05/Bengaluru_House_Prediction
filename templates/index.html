@@ -14,7 +14,7 @@
             <label>BHK (Bedrooms):</label><br>
             <select name="size" required>
                 <option value="" disabled selected>Select BHK</option>
-                {% for i in range(1, 11) %}
+                {% for i in range(1, 5) %}
                 <option value="{{ i }}">{{ i }}</option>
                 {% endfor %}
             </select><br><br>
@@ -25,7 +25,7 @@
             <label>Bathrooms:</label><br>
             <select name="bath" required>
                 <option value="" disabled selected>Select Bathrooms</option>
-                {% for i in range(1, 11) %}
+                {% for i in range(1, 5) %}
                 <option value="{{ i }}">{{ i }}</option>
                 {% endfor %}
             </select><br><br>
