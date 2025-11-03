@@ -1,72 +1,114 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 40px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e8f0ff, #f9f9f9);
+    margin: 0;
+    padding: 40px;
+    color: #333;
 }
 
 .container {
-    background-color: white;
-    padding: 25px 30px;
-    max-width: 500px;
+    background: #fff;
+    padding: 35px;
+    max-width: 600px;
     margin: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
-    color: #333;
+    color: #222;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
-label {
-    font-weight: bold;
-    color: #555;
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* Flex container for inputs arranged in 2 columns */
+/* Grid with 2 columns for better layout */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px 15px;
+    gap: 20px 20px;
     margin-bottom: 20px;
 }
 
-/* Style inputs & selects inside grid */
+label {
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+}
+
 input[type=number],
 select {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 10px;
+    border: 1.5px solid #d0d0d0;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: all 0.2s ease;
 }
 
+input[type=number]:focus,
+select:focus {
+    outline: none;
+    border-color: #4A90E2;
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.3);
+    background-color: #fff;
+}
+
+/* Predict button */
 input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #4A90E2;
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    margin-top: 10px;
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #357ABD;
+    transform: translateY(-2px);
 }
 
-h3 {
+/* Result box (appears after prediction) */
+.result-box {
+    background: #f1f8f4;
+    border-left: 5px solid #2e8b57;
+    margin-top: 25px;
+    padding: 15px 20px;
+    border-radius: 6px;
     text-align: center;
-    margin-top: 20px;
-    color: #008000;
 }
 
-/* Responsive: stack inputs on small screens */
-@media (max-width: 480px) {
+.result-box h3 {
+    color: #2e8b57;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.result-box p {
+    color: #222;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
     .form-grid {
         grid-template-columns: 1fr;
     }
