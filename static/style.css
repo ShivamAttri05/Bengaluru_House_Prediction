@@ -7,27 +7,38 @@ body {
 .container {
     background-color: white;
     padding: 25px 30px;
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     color: #333;
     text-align: center;
+    margin-bottom: 25px;
 }
 
 label {
     font-weight: bold;
     color: #555;
+    display: block;
+    margin-bottom: 5px;
 }
 
-input[type=number], select {
+/* Flex container for inputs arranged in 2 columns */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 15px;
+    margin-bottom: 20px;
+}
+
+/* Style inputs & selects inside grid */
+input[type=number],
+select {
     width: 100%;
     padding: 8px;
-    margin-top: 6px;
-    margin-bottom: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -52,4 +63,11 @@ h3 {
     text-align: center;
     margin-top: 20px;
     color: #008000;
+}
+
+/* Responsive: stack inputs on small screens */
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }
