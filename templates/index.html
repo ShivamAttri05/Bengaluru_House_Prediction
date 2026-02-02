@@ -3,7 +3,7 @@
 
 <head>
     <title>House Price Prediction</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -255,8 +255,7 @@
             <p>{{ prediction }} Lakhs</p>
         </div>
         {% endif %}
-
-
+    </div>
 </body>
 
 </html>
